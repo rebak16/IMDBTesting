@@ -24,7 +24,7 @@ public class MainNavBar extends BasePage{
     private WebElement homeButton;
     @FindBy(xpath = "//*[@class='ipc-icon ipc-icon--menu']")
     private WebElement menuBar;
-    @FindBy(xpath = "//*[text()='Watchlist']")
+    @FindBy(xpath = "//*[@class='ipc-button ipc-button--single-padding ipc-button--default-height ipc-button--core-baseAlt ipc-button--theme-baseAlt ipc-button--on-textPrimary ipc-text-button']")
     private WebElement watchlist;
     @FindBy(xpath = "//*[text()='All']")
     private WebElement allButton;
@@ -47,6 +47,7 @@ public class MainNavBar extends BasePage{
     }
 
     public void clickOnAll(){
+        wait.until(ExpectedConditions.elementToBeClickable(allButton));
         allButton.click();
     }
 
