@@ -17,6 +17,10 @@ public class SearchResultsPage extends BasePage{
         PageFactory.initElements(driver, this);
     }
 
+    public void clickOnSearchResult(){
+        searchResults.click();
+    }
+
     public boolean getSearchResults() {
         return searchResults.isDisplayed();
     }
