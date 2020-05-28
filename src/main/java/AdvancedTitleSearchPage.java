@@ -2,6 +2,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -47,6 +48,7 @@ public class AdvancedTitleSearchPage extends BasePage{
     }
 
     public void selectFilmAndMovie(){
+        wait.until(ExpectedConditions.elementToBeClickable(featureFilm));
         featureFilm.click();
         TVMovie.click();
     }
@@ -57,10 +59,12 @@ public class AdvancedTitleSearchPage extends BasePage{
     }
 
     public Select selectMinRating(){
+        wait.until(ExpectedConditions.elementToBeClickable(userRatingMin));
         return new Select(userRatingMin);
     }
 
     public Select selectMaxRating(){
+        wait.until(ExpectedConditions.elementToBeClickable(userRatingMax));
         return new Select(userRatingMax);
     }
 
@@ -73,6 +77,7 @@ public class AdvancedTitleSearchPage extends BasePage{
     }
 
     public void fillVotes(String votingNumberMinPar, String votingNumberMaxPar){
+        wait.until(ExpectedConditions.elementToBeClickable(votingNumberMin));
         votingNumberMin.sendKeys(votingNumberMinPar);
         votingNumberMax.sendKeys(votingNumberMaxPar);
     }

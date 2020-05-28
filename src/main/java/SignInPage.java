@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SignInPage extends BasePage{
@@ -43,6 +44,7 @@ public class SignInPage extends BasePage{
     }
 
     public void fillEmail(){
+        wait.until(ExpectedConditions.elementToBeClickable(emailField));
         emailField.sendKeys(getUsername());
     }
 

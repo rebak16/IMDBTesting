@@ -2,6 +2,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SearchPage extends BasePage{
@@ -18,6 +19,7 @@ public class SearchPage extends BasePage{
     }
 
     public void clickOnAdvancedTitleSearch(){
+        wait.until(ExpectedConditions.elementToBeClickable(advancedTitleSearch));
         advancedTitleSearch.click();
     }
 }
