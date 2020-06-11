@@ -19,6 +19,10 @@ public class SearchPage extends BasePage{
     private WebElement searchResult;
     @FindBy(xpath = "//*[text()='Sign in']")
     private WebElement checkSignInText;
+    @FindBy(xpath = "//*[@class='slate_button prevent-ad-overlay video-modal']")
+    private WebElement trailerButton;
+    @FindBy(xpath = "//*[@class='VideoInfostyles__VideoTitle-sc-14h6b6g-6 gUdJQB']")
+    private WebElement checkTrailerText;
 
     public SearchPage() {
         this.driver = getDriver();
@@ -32,6 +36,7 @@ public class SearchPage extends BasePage{
     }
 
     public void clickOnSearchResult(){
+        wait.until(ExpectedConditions.elementToBeClickable(searchResult));
         searchResult.click();
     }
 
@@ -46,5 +51,15 @@ public class SearchPage extends BasePage{
 
     public boolean checkSignInText(){
         return checkSignInText.isDisplayed();
+    }
+
+    public void playTrailer(){
+        wait.until(ExpectedConditions.elementToBeClickable(trailerButton));
+        trailerButton.click();
+    }
+
+    public boolean checkTrailerText(){
+        wait.until(ExpectedConditions.visibilityOf(checkTrailerText));
+        return checkTrailerText.isDisplayed();
     }
 }
