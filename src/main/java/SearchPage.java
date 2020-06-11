@@ -23,6 +23,10 @@ public class SearchPage extends BasePage{
     private WebElement trailerButton;
     @FindBy(xpath = "//*[@class='VideoInfostyles__VideoTitle-sc-14h6b6g-6 gUdJQB']")
     private WebElement checkTrailerText;
+    @FindBy(xpath = "//*[@class='mediastrip'][1]")
+    private WebElement image;
+    @FindBy(xpath = "//*[@id='photo-container']")
+    private WebElement checkImage;
 
     public SearchPage() {
         this.driver = getDriver();
@@ -61,5 +65,15 @@ public class SearchPage extends BasePage{
     public boolean checkTrailerText(){
         wait.until(ExpectedConditions.visibilityOf(checkTrailerText));
         return checkTrailerText.isDisplayed();
+    }
+
+    public void clickOnImage(){
+        wait.until(ExpectedConditions.elementToBeClickable(image));
+        image.click();
+    }
+
+    public boolean checkImageIsDisplayed(){
+        wait.until(ExpectedConditions.elementToBeClickable(checkImage));
+        return checkImage.isDisplayed();
     }
 }
