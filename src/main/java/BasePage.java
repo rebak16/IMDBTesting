@@ -8,8 +8,8 @@ public abstract class BasePage {
     private WebDriver driver = WebDriverManager.getDriver();
     //private int timeOutInSeconds = Integer.parseInt(System.getenv("TimeOut"));
     private WebDriverWait wait = new WebDriverWait(driver, 2);
-    private String username = System.getenv("UserName");
-    private String password = System.getenv("PASSWORD");
+    private String username = System.getenv("IMDBUserName");
+    private String password = System.getenv("IMDBPASSWORD");
 
 
     public void navigate(){
