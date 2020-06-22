@@ -10,17 +10,7 @@ public class SignInTest{
     private MainNavBar mainNavBar = new MainNavBar();
     private SignInPage signInPage = new SignInPage();
 
-    @BeforeEach
-    public void setup(){
-        mainNavBar.navigate();
-    }
-
     @Test
     public void sigInTest(){
-        mainNavBar.clickOnSignIn();
-        signInPage.clickOnSignInWithIMDB();
-        signInPage.fillEmail();
-        signInPage.fillPassword();
-        signInPage.clickOnSignInButton();
     }
 }
