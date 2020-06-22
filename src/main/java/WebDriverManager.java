@@ -1,6 +1,7 @@
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -30,16 +31,18 @@ public class WebDriverManager {
     public static WebDriver getDriver() {
         if (driver == null) {
             try {
-                System.setProperty("webdriver.gecko.driver", "/src/test/resources/geckodriver1");
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--start-maximized");
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-                capabilities.setBrowserName("chrome");
-                capabilities.setPlatform(Platform.LINUX);
-                driver = new RemoteWebDriver(new URL(hubUrl), capabilities);
+                capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+                //capabilities.setBrowserName("chrome");
+                //capabilities.setPlatform(Platform.LINUX);
+                driver = new RemoteWebDriver(new URL(hubUrl), options);
             } catch (MalformedURLException e) {
                 e.fillInStackTrace();
             }
         }
-        driver.manage().window().maximize();
+
         return driver;
     }
 
