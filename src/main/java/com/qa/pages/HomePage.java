@@ -31,6 +31,7 @@ public class HomePage extends BasePage {
     }
 
     public void clickOnAddToWatchlist(){
+        wait.until(ExpectedConditions.elementToBeClickable(addToWatchlist));
         addToWatchlist.click();
     }
 

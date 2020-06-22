@@ -10,7 +10,7 @@ public abstract class BasePage {
     private String baseURL = System.getenv("BaseURL");
     private WebDriver driver = WebDriverManager.getDriver();
     //private int timeOutInSeconds = Integer.parseInt(System.getenv("TimeOut"));
-    private WebDriverWait wait = new WebDriverWait(driver, 2);
+    private WebDriverWait wait = new WebDriverWait(driver, 4);
     private String username = System.getenv("UserName");
     private String password = System.getenv("PASSWORD");
 
