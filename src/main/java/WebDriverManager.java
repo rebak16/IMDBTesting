@@ -31,8 +31,8 @@ public class WebDriverManager {
         if (driver == null) {
             try {
                 System.setProperty("webdriver.gecko.driver", "/src/test/resources/geckodriver1");
-                DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-                capabilities.setBrowserName("firefox");
+                DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+                capabilities.setBrowserName("chrome");
                 capabilities.setPlatform(Platform.LINUX);
                 driver = new RemoteWebDriver(new URL(hubUrl), capabilities);
             } catch (MalformedURLException e) {
