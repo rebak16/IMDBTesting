@@ -1,9 +1,12 @@
+package com.qa.stepDefinitions;
+
+import com.qa.pages.MainNavBar;
+import com.qa.pages.SearchPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.FindBy;
 
-public class PlayATrailerTest {
+public class ImageTest {
 
     private MainNavBar mainNavBar = new MainNavBar();
     private SearchPage searchPage = new SearchPage();
@@ -14,10 +17,10 @@ public class PlayATrailerTest {
     }
 
     @Test
-    public void playATrailer(){
+    public void clickOnImage(){
         mainNavBar.searchAMovie();
         searchPage.clickOnSearchResult();
-        searchPage.playTrailer();
-        Assertions.assertTrue(searchPage.checkTrailerText());
+        searchPage.clickOnImage();
+        Assertions.assertTrue(searchPage.checkImageIsDisplayed());
     }
 }

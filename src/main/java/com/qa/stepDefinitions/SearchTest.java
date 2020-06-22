@@ -1,10 +1,11 @@
+package com.qa.stepDefinitions;
+
+import com.qa.pages.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class SearchTest extends Initialization{
+public class SearchTest{
 
     private MainNavBar mainNavBar = new MainNavBar();
     private SearchResultsPage searchResultsPage = new SearchResultsPage();
@@ -24,8 +25,6 @@ public class SearchTest extends Initialization{
         Assertions.assertTrue(searchResultsPage.getSearchResults());
     }
 
-    @ParameterizedTest
-    @CsvFileSource(resources = "advancedSearch.csv", numLinesToSkip = 1)
     public void advancedSearch(String releaseDateMinPar, String releaseDateMaxPar, String minRatingPar,
                                String maxRatingPar, String votingNumberMinPar, String votingNumberMaxPar) {
         mainNavBar.clickOnAll();

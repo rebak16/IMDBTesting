@@ -1,3 +1,7 @@
+package com.qa.pages;
+
+import com.qa.pages.BasePage;
+import com.qa.pages.MainNavBar;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SignInPage extends BasePage{
+public class SignInPage extends BasePage {
 
     private WebDriver driver;
     private WebDriverWait wait;

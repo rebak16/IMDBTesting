@@ -1,8 +1,14 @@
+package com.qa.stepDefinitions;
+
+import com.qa.pages.HomePage;
+import com.qa.pages.MainNavBar;
+import com.qa.pages.SearchResultsPage;
+import com.qa.pages.SignInPage;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class WatchlistTest extends Initialization{
+public class WatchlistTest{
 
     private HomePage homePage = new HomePage();
     private MainNavBar mainNavBar = new MainNavBar();

@@ -1,3 +1,6 @@
+package com.qa.pages;
+
+import com.qa.util.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
