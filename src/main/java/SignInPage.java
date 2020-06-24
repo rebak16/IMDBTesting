@@ -40,6 +40,7 @@ public class SignInPage extends BasePage{
     }
 
     public void clickOnSignInWithIMDB(){
+        wait.until(ExpectedConditions.elementToBeClickable(signInWithIMDB));
         signInWithIMDB.click();
     }
 
