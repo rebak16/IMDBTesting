@@ -31,6 +31,10 @@ public class MainNavBar extends BasePage {
     private WebElement allButton;
     @FindBy(linkText = "Advanced Search")
     private WebElement advancedSearchButton;
+    @FindBy(xpath = "//*[@class='imdb-header__account-toggle--logged-in imdb-header__accountmenu-toggle navbar__user-name navbar__user-menu-toggle__name navbar__user-menu-toggle--desktop']")
+    private WebElement userButton;
+    @FindBy(linkText = "Your lists")
+    private WebElement yourLists;
 
     public MainNavBar() {
         this.driver = getDriver();
@@ -59,5 +63,14 @@ public class MainNavBar extends BasePage {
 
     public void clickOnWatchlist() {
         watchlist.click();
+    }
+
+    public void clickOnUserButton(){
+        userButton.click();
+    }
+
+    public void clickOnYourLists(){
+        wait.until(ExpectedConditions.elementToBeClickable(yourLists));
+        yourLists.click();
     }
 }

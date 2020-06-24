@@ -5,7 +5,6 @@ import com.qa.pages.SearchPage;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 public class ImageTest {
 
