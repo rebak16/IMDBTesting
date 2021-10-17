@@ -11,7 +11,7 @@ import java.net.URL;
 public class WebDriverManager {
 
     private static WebDriver driver = new ChromeDriver();
-    private static String gridUrl = "http://localhost:4444/wd/hub";
+    private static String gridUrl = "http://localhost:4444";
 
 
     private WebDriverManager() {
@@ -26,7 +26,7 @@ public class WebDriverManager {
     public static WebDriver getDriver1() {
         if (driver == null) {
             try {
-                System.setProperty("webdriver.gecko.driver", "/src/test/resources/geckodriver1");
+                System.setProperty("webdriver.gecko.driver", "/src/test/java/geckodriver");
                 DesiredCapabilities capabilities = DesiredCapabilities.firefox();
                 capabilities.setBrowserName("firefox");
                 capabilities.setPlatform(Platform.LINUX);
